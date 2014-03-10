@@ -1,4 +1,6 @@
-<div class="field" data-hook="use_master_price">
-  <%= f.check_box :use_master_price %>
-  <%= f.label :use_master_price, t(:use_master_price) %>
+<div class="field checkbox" data-hook="use_master_price">
+  <%= f.label :use_master_price do %>
+    <%= f.check_box :use_master_price %>
+    </span><%= t(:use_master_price) %></span>
+  <% end %>
 </div>
