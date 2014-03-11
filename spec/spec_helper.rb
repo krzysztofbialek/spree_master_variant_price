@@ -19,6 +19,12 @@ require 'spree/core/url_helpers'
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
 
+  # include local factories
+  Dir["#{File.dirname(__FILE__)}/factories/**/*.rb"].each do |f|
+    fp =  File.expand_path(f)
+    require fp
+  end
+
   # == URL Helpers
   #
   # Allows access to Spree's routes in specs:
