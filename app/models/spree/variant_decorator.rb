@@ -10,12 +10,11 @@ module Spree
       default_price.price
     end
 
-    def money
-      
+    def display_price
       if use_master_price? && !is_master?
-        Spree::Money.new(default_price.price || 0, { currency: currency })
+        Spree::Money.new(product.master.price.amount || 0, { currency: currency })
       else
-        Spree::Money.new(amount || 0, { currency: currency })
+        Spree::Money.new(default_price.amount || 0, { currency: currency })
       end
     end
 
