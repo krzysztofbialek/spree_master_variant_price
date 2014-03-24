@@ -1,21 +1,30 @@
 SpreeMasterVariantPrice
 =======================
 
-Introduction goes here.
+This is a spree extension aimed to help working with multiple variants. Changing price of each variant manualy can be a tedious,
+extension add extra field to variant option 'use master price'. When checked it will use its product master variant price for display
+and basket calculations.
 
+It make chaning every variant price as easy as changing master product price.
 
-Example
+Compatible with Spree 1.3.0
+
+Instalation
 =======
 
-Example goes here.
+    gem 'spree_master_variant_price', github: 'krzysztofbialek/spree_master_variant_price'
 
-Testing
--------
+    $ bundle install
+    $ bundle exec rails g spree_master_variant_price:install
 
-Be sure to bundle your dependencies and then create a dummy test app for the specs to run against.
+Accept when propted about migration
 
-    $ bundle
-    $ bundle exec rake test_app
-    $ bundle exec rspec spec
+Updating existing variants
+=======
 
-Copyright (c) 2014 [name of extension creator], released under the New BSD License
+Is as simple as running this snippet in the console:
+
+    Spree::Variant.update_all(:use_master_price, true)
+
+
+Copyright (c) 2014 Krzysztof Białek, released under the New BSD License
