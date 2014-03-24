@@ -17,7 +17,7 @@ Instalation
     $ bundle install
     $ bundle exec rails g spree_master_variant_price:install
 
-Accept when propted about migration
+Accept when prompted about migration
 
 Updating existing variants
 =======
@@ -25,6 +25,7 @@ Updating existing variants
 Is as simple as running this snippet in the console:
 
     Spree::Variant.update_all(:use_master_price, true)
+
 
 
 Copyright (c) 2014 Krzysztof Białek, released under the New BSD License
