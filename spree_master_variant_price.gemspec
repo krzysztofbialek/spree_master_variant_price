@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_master_variant_price'
-  s.version     = '1.3.0'
+  s.version     = '1.3.1'
   s.summary     = 'Spree extenstion for using master price in variants'
   s.description = 'Adds option in variant form to use parent product master price and modifies variant price method to use it'
   s.required_ruby_version = '>= 1.8.7'
