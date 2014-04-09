@@ -5,9 +5,11 @@ module Spree
    
     #return product master price if use_master_price flag is set to true 
     def price
+      super unless price.present?
+
       return product.master.price if use_master_price? && !is_master?
 
-      default_price.price
+      default_price.price 
     end
 
     def display_price
