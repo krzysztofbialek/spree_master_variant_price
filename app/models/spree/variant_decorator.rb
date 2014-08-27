@@ -2,14 +2,14 @@ module Spree
   Variant.class_eval do
 
     attr_accessible :use_master_price
-   
-    #return product master price if use_master_price flag is set to true 
+
+    #return product master price if use_master_price flag is set to true
     def price
-      return nil unless self.persisted?
+      return 0 unless self.persisted?
 
       return product.master.price if use_master_price? && !is_master?
 
-      default_price.price 
+      default_price.price
     end
 
     def display_price
